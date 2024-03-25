@@ -123,6 +123,11 @@
         position: relative;
         overflow: hidden;
     }
+    @media only screen and (max-width: 600px) {
+        .ca-col {
+            flex-basis: 100%; /* Change to full width for mobile */
+        }
+    }
 
     .ca-col img {
 
@@ -258,6 +263,7 @@
         text-align: center;
         margin: auto;
         padding-top: 50px;
+        margin-bottom: 40px;
     }
 
     .course p {
@@ -283,6 +289,16 @@
         background: silver;
         transition: 00.5s;
 
+    }
+    @media only screen and (max-width: 600px) {
+        .row {
+            flex-direction: column;
+            margin-bottom:20px; /* Change to single column for mobile */
+        }
+    
+        .c-col {
+            flex-basis: 100%; /* Change to full width for mobile */
+        }
     }
 
     .course h3 {
@@ -654,58 +670,43 @@
             </div>
         </div>
     </section>
-    <section class="container text-center">
+    <section class="container mt-4">
         <div class="row">
-            <div class="col-md-8 rounded">
-
+            <div class="col-md-8 col-12 rounded">
                 <img src="gymm.jpg" class="img-r" style="width:100%; height:80vh;" alt="">
-
-
             </div>
-            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
-
-                <p class="fs-1 fw-bold lh-lg m-4">
+            <div class="col-md-4 col-12 d-flex flex-column align-items-center text-center">
+                <p class="fs-1 fw-bold lh-lg m-4 text-center">
                     AMAZING <br /> FUNCTIONAL <br /> STRENGTH <br /> WORKOUTS, <br /> JOIN US NOW!!
                 </p>
-
                 <div class="fancy">
                     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <a href="#"><span>Subscribe</span></a>
                     </button>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">Subscribe Today</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form method='post' action='/send_email'>
-
                                         <?= csrf_field() ?>
                                         <div class="form-outline mb-4">
-
-                                            <input type="email" id="loginName" required name="email"
-                                                class="form-control" value="" />
+                                            <input type="email" id="loginName" required name="email" class="form-control" value="" />
                                             <label class="form-label" for="loginName">Email</label>
                                         </div>
-
                                         <!-- Password input -->
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="loginPassword" required name="password"
-                                                class="form-control" autocomplete="new-password" />
+                                            <input type="password" id="loginPassword" required name="password" class="form-control" autocomplete="new-password" />
                                             <label class="form-label" for="loginPassword">Password</label>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                   
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -714,6 +715,7 @@
             </div>
         </div>
     </section>
+    
     <section class="footer">
         <div class="container text-center">
             <div class="row">
@@ -737,7 +739,7 @@
                         width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="col" id="community">
+                <div class="col align-items-center" id="community">
                     <div class="card">
                         <div class="background">
                         </div>
